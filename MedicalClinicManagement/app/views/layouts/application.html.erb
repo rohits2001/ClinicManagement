@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MediClinic Management System</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body class="min-h-screen bg-gray-100">
+    <%= render 'shared/header' %>
+    
+    <main class="py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <% if notice %>
+          <div class="mb-4 p-4 bg-green-100 border-l-4 border-green-500 text-green-700">
+            <%= notice %>
+          </div>
+        <% end %>
+        
+        <% if alert %>
+          <div class="mb-4 p-4 bg-red-100 border-l-4 border-red-500 text-red-700">
+            <%= alert %>
+          </div>
+        <% end %>
+        
+        <%= yield %>
+      </div>
+    </main>
+  </body>
+</html>
